@@ -144,9 +144,9 @@ idf_component_register(SRCS "main.c"
 
 <img width="893" height="491" alt="รูป" src="https://github.com/user-attachments/assets/b0093a2a-9f94-4ca6-ba5a-ec685993624a" />
 
-
-```
+``
 
 #### 4.2 จากการสังเกตุ LED 
+
 https://drive.google.com/file/d/1d2yJaJfUqQyeAlCQSIHfTTeq_bC8mnfn/view?usp=sharing
 
