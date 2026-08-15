@@ -172,10 +172,20 @@ idf_component_register(SRCS "main.c"
 #### 4.1 จาก `idf.py monitor` 
 
 ```
-
+I (312) LAB1_RGB_TIMING: RGB LED Timing System Started.
+I (312) LAB1_RGB_TIMING: Phase R: ON
+I (2812) LAB1_RGB_TIMING: Phase R: OFF
+I (2812) LAB1_RGB_TIMING: Phase G: ON
+I (5312) LAB1_RGB_TIMING: Phase G: OFF
+I (5312) LAB1_RGB_TIMING: Phase B: ON
+I (7812) LAB1_RGB_TIMING: Phase B: OFF
+I (7812) LAB1_RGB_TIMING: Entering Rest Phase... Waiting for residual charge to dissipate.
+-----------------------------------------------------------
+I (10812) LAB1_RGB_TIMING: Phase R: ON
 
 ```
 
 #### 4.2 จากการสังเกตุ LED 
-
-
+ลำดับการสลับสี: RGB LED สว่างสลับทีละสีตามลำดับ สีแดง (Red) $\rightarrow$ สีเขียว (Green) $\rightarrow$ สีน้ำเงิน (Blue) โดยแต่ละสีจะสว่างค้างไว้เป็นเวลา 2.5 วินาที แล้วดับลง
+ระยะพักระบบ (Rest Phase): หลังจากสีน้ำเงินดับลง หลอด LED ทุกสีจะดับสนิทพร้อมกันเป็นเวลา 3 วินาที เพื่อเว้นระยะพักรอบ ก่อนจะวนกลับไปเริ่มต้นสว่างที่สีแดงใหม่อีกครั้งเป็นลูปต่อเนื่อง
+สถานะลูปการทำงาน (Timing Loop): จังหวะเวลาการสลับติด-ดับของแต่ละสีและช่วงพักระบบตรงตามที่กำหนดไว้ในมาโคร TIME_ACTIVE_MS (2500 ms) และ TIME_REST_MS (3000 ms) ผ่านฟังก์ชัน vTaskDelay() อย่างถูกต้อง
